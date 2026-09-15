@@ -1,0 +1,288 @@
+<!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mandarin Flashcard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head> <body>
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        <span class="logo-chinese">中文</span>
+        <span class="logo-text">Mandarin Flashcard</span>
+    </div>
+
+    <div class="header-right">
+        <span class="level-badge" id="headerLevel">A1</span>
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+    <!-- LEVEL NAVIGATION -->
+
+    <nav class="level-nav">
+
+        <button class="level-button active" data-level="A1">
+            A1
+        </button>
+
+        <button class="level-button" data-level="A2">
+            A2
+        </button>
+
+        <button class="level-button" data-level="B1">
+            B1
+        </button>
+
+        <button class="level-button" data-level="B2">
+            B2
+        </button>
+
+        <button class="level-button" data-level="C1">
+            C1
+        </button>
+
+        <button class="level-button" data-level="C2">
+            C2
+        </button>
+
+    </nav>
+
+
+    <!-- TITLE -->
+
+    <section class="page-title">
+
+        <div>
+
+            <div class="eyebrow">
+                MANDARIN VOCABULARY
+            </div>
+
+            <h1>
+                Flashcard <span id="titleLevel">A1</span>
+            </h1>
+
+            <p>
+                Pelajari kosakata Mandarin satu per satu.
+            </p>
+
+        </div>
+
+        <div class="progress-number">
+
+            <strong id="currentNumber">1</strong>
+
+            <span>/</span>
+
+            <span id="totalNumber">0</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROGRESS -->
+
+    <div class="progress-wrapper">
+
+        <div
+            class="progress-bar"
+            id="progressBar">
+        </div>
+
+    </div>
+
+
+    <!-- FLASHCARD -->
+
+    <section class="flashcard-wrapper">
+
+        <div
+            class="flashcard"
+            id="flashcard"
+            tabindex="0"
+        >
+
+            <!-- FRONT -->
+
+            <div class="card-face card-front">
+
+                <div class="card-label">
+                    HANZI
+                </div>
+
+                <div
+                    class="hanzi"
+                    id="hanzi">
+                    你好
+                </div>
+
+                <div class="flip-hint">
+                    Klik kartu untuk melihat arti
+                </div>
+
+            </div>
+
+
+            <!-- BACK -->
+
+            <div class="card-face card-back">
+
+                <div class="card-label">
+                    ARTI
+                </div>
+
+                <div
+                    class="meaning"
+                    id="meaning">
+                    halo
+                </div>
+
+                <div
+                    class="back-word"
+                    id="backWord">
+                    你好
+                </div>
+
+                <div
+                    class="back-pinyin"
+                    id="backPinyin">
+                    nǐ hǎo
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTROLS -->
+
+    <div class="controls">
+
+        <button
+            class="control-button previous"
+            id="previousButton">
+
+            <span>←</span>
+            Sebelumnya
+
+        </button>
+
+
+        <button
+            class="control-button next"
+            id="nextButton">
+
+            Berikutnya
+            <span>→</span>
+
+        </button>
+
+    </div>
+
+
+    <!-- EXTRA CONTROLS -->
+
+    <div class="extra-controls">
+
+        <button
+            class="shuffle-button"
+            id="shuffleButton">
+
+            <span>⤨</span>
+            Acak kata
+
+        </button>
+
+        <button
+            class="flip-button"
+            id="flipButton">
+
+            ↻ Balik kartu
+
+        </button>
+
+    </div>
+
+
+    <!-- KEYBOARD HINT -->
+
+    <div class="keyboard-hint">
+
+        <span>←</span>
+        sebelumnya
+
+        <span>→</span>
+        berikutnya
+
+        <span>SPACE</span>
+        balik kartu
+
+    </div>
+
+
+    <!-- WORD LIST -->
+
+    <section class="word-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    VOCABULARY
+                </div>
+
+                <h2>
+                    Daftar Kata
+                </h2>
+
+            </div>
+
+            <div
+                class="word-count"
+                id="wordCount">
+                0 kata
+            </div>
+
+        </div>
+
+
+        <div
+            class="word-grid"
+            id="wordGrid">
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-chinese">
+        学中文
+    </div>
+
+    <div>
+        Mandarin Flashcard
+    </div>
+
+</footer>
+
+
+<script src="words.js"></script>
+<script src="script.js"></script>
+
+</body> </html>
