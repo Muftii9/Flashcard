@@ -1,0 +1,825 @@
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+:root {
+--red: #c92a2a;
+--red-dark: #a61e1e;
+--red-light: #fff1f1;
+
+--black: #222222;
+--gray: #777777;
+--light-gray: #eeeeee;
+--background: #f8f8f8;
+--white: #ffffff;
+
+--radius: 18px;
+
+
+}
+
+body {
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Arial,
+sans-serif;
+
+background: var(--background);
+
+color: var(--black);
+
+min-height: 100vh;
+
+
+}
+
+/* ================= HEADER ================= */
+
+.header {
+height: 70px;
+
+background: white;
+
+border-bottom: 1px solid #e8e8e8;
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+padding: 0 7%;
+
+
+}
+
+.logo {
+display: flex;
+
+align-items: center;
+
+gap: 10px;
+
+
+}
+
+.logo-chinese {
+font-size: 24px;
+
+font-weight: 700;
+
+color: var(--red);
+
+
+}
+
+.logo-text {
+font-size: 15px;
+
+font-weight: 600;
+
+
+}
+
+.level-badge {
+background: var(--red-light);
+
+color: var(--red);
+
+padding: 7px 14px;
+
+border-radius: 30px;
+
+font-size: 13px;
+
+font-weight: 700;
+
+
+}
+
+/* ================= MAIN ================= */
+
+.container {
+width: min(900px, 92%);
+
+margin: 40px auto 70px;
+
+
+}
+
+/* ================= LEVEL NAV ================= */
+
+.level-nav {
+display: flex;
+
+justify-content: center;
+
+gap: 7px;
+
+background: white;
+
+border: 1px solid #e8e8e8;
+
+border-radius: 14px;
+
+padding: 6px;
+
+margin-bottom: 40px;
+
+
+}
+
+.level-button {
+flex: 1;
+
+border: none;
+
+background: transparent;
+
+padding: 11px 8px;
+
+border-radius: 9px;
+
+cursor: pointer;
+
+color: #777;
+
+font-size: 14px;
+
+font-weight: 700;
+
+transition: 0.2s;
+
+
+}
+
+.level-button:hover {
+color: var(--red);
+
+background: #fafafa;
+
+
+}
+
+.level-button.active {
+background: var(--red);
+
+color: white;
+
+
+}
+
+/* ================= TITLE ================= */
+
+.page-title {
+display: flex;
+
+justify-content: space-between;
+
+align-items: flex-end;
+
+margin-bottom: 18px;
+
+
+}
+
+.eyebrow {
+font-size: 11px;
+
+letter-spacing: 2px;
+
+font-weight: 800;
+
+color: var(--red);
+
+margin-bottom: 7px;
+
+
+}
+
+h1 {
+font-size: 32px;
+
+line-height: 1.2;
+
+
+}
+
+.page-title p {
+color: #888;
+
+font-size: 14px;
+
+margin-top: 8px;
+
+
+}
+
+.progress-number {
+color: #888;
+
+font-size: 16px;
+
+display: flex;
+
+gap: 5px;
+
+align-items: center;
+
+
+}
+
+.progress-number strong {
+color: var(--black);
+
+font-size: 22px;
+
+
+}
+
+/* ================= PROGRESS ================= */
+
+.progress-wrapper {
+height: 5px;
+
+background: #e9e9e9;
+
+border-radius: 20px;
+
+overflow: hidden;
+
+margin-bottom: 28px;
+
+
+}
+
+.progress-bar {
+height: 100%;
+
+width: 0%;
+
+background: var(--red);
+
+transition: width 0.3s ease;
+
+
+}
+
+/* ================= FLASHCARD ================= */
+
+.flashcard-wrapper {
+perspective: 1200px;
+}
+
+.flashcard {
+width: 100%;
+
+height: 430px;
+
+position: relative;
+
+cursor: pointer;
+
+outline: none;
+
+transform-style: preserve-3d;
+
+transition:
+    transform 0.6s
+    cubic-bezier(.2,.7,.2,1);
+
+
+}
+
+.flashcard.flipped {
+transform: rotateY(180deg);
+}
+
+.card-face {
+position: absolute;
+
+inset: 0;
+
+width: 100%;
+
+height: 100%;
+
+background: white;
+
+border-radius: var(--radius);
+
+box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.07);
+
+backface-visibility: hidden;
+
+-webkit-backface-visibility: hidden;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+text-align: center;
+
+padding: 30px;
+
+
+}
+
+.card-back {
+transform: rotateY(180deg);
+
+background: #fffafa;
+
+
+}
+
+/* ================= CARD FRONT ================= */
+
+.card-label {
+font-size: 10px;
+
+letter-spacing: 3px;
+
+font-weight: 800;
+
+color: #aaa;
+
+margin-bottom: 20px;
+
+
+}
+
+.hanzi {
+font-size: clamp(70px, 10vw, 105px);
+
+line-height: 1.15;
+
+font-weight: 500;
+
+color: #1d1d1d;
+
+font-family:
+    "Noto Serif SC",
+    "Microsoft YaHei",
+    serif;
+
+
+}
+
+.pinyin {
+color: var(--red);
+
+font-size: 24px;
+
+margin-top: 12px;
+
+font-weight: 500;
+
+
+}
+
+.flip-hint {
+position: absolute;
+
+bottom: 28px;
+
+color: #aaa;
+
+font-size: 12px;
+
+
+}
+
+/* ================= CARD BACK ================= */
+
+.meaning {
+font-size: clamp(35px, 6vw, 55px);
+
+font-weight: 700;
+
+color: #222;
+
+margin-bottom: 25px;
+
+
+}
+
+.back-word {
+font-size: 28px;
+
+color: #333;
+
+
+}
+
+.back-pinyin {
+color: var(--red);
+
+margin-top: 7px;
+
+font-size: 16px;
+
+
+}
+
+/* ================= CONTROLS ================= */
+
+.controls {
+display: flex;
+
+gap: 12px;
+
+margin-top: 20px;
+
+
+}
+
+.control-button {
+flex: 1;
+
+border-radius: 11px;
+
+padding: 15px;
+
+font-size: 15px;
+
+font-weight: 700;
+
+cursor: pointer;
+
+transition: 0.2s;
+
+
+}
+
+.control-button:hover {
+transform: translateY(-2px);
+}
+
+.previous {
+background: white;
+
+border: 1px solid #ddd;
+
+color: #333;
+
+
+}
+
+.next {
+background: var(--red);
+
+border: 1px solid var(--red);
+
+color: white;
+
+
+}
+
+.next:hover {
+background: var(--red-dark);
+}
+
+/* ================= EXTRA ================= */
+
+.extra-controls {
+display: flex;
+
+justify-content: center;
+
+gap: 20px;
+
+margin-top: 15px;
+
+
+}
+
+.shuffle-button,
+.flip-button {
+border: none;
+
+background: transparent;
+
+color: var(--red);
+
+font-weight: 600;
+
+font-size: 13px;
+
+cursor: pointer;
+
+padding: 8px;
+
+
+}
+
+.shuffle-button:hover,
+.flip-button:hover {
+text-decoration: underline;
+}
+
+/* ================= KEYBOARD ================= */
+
+.keyboard-hint {
+text-align: center;
+
+color: #aaa;
+
+font-size: 11px;
+
+margin: 12px 0 65px;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+gap: 7px;
+
+
+}
+
+.keyboard-hint span {
+border: 1px solid #ddd;
+
+background: white;
+
+color: #777;
+
+padding: 3px 6px;
+
+border-radius: 4px;
+
+font-size: 9px;
+
+font-weight: 700;
+
+
+}
+
+/* ================= WORD LIST ================= */
+
+.word-section {
+border-top: 1px solid #e5e5e5;
+
+padding-top: 35px;
+
+
+}
+
+.section-heading {
+display: flex;
+
+justify-content: space-between;
+
+align-items: flex-end;
+
+margin-bottom: 20px;
+
+
+}
+
+h2 {
+font-size: 24px;
+}
+
+.word-count {
+color: #888;
+
+font-size: 13px;
+
+
+}
+
+.word-grid {
+display: grid;
+
+grid-template-columns:
+    repeat(auto-fill, minmax(180px, 1fr));
+
+gap: 10px;
+
+
+}
+
+.word-item {
+background: white;
+
+border: 1px solid #e9e9e9;
+
+border-radius: 12px;
+
+padding: 17px;
+
+cursor: pointer;
+
+transition: 0.2s;
+
+
+}
+
+.word-item:hover {
+border-color: #e0aaaa;
+
+box-shadow:
+    0 5px 18px rgba(0,0,0,0.04);
+
+transform: translateY(-2px);
+
+
+}
+
+.word-item.selected {
+border-color: var(--red);
+
+background: var(--red-light);
+
+
+}
+
+.word-hanzi {
+font-family:
+"Noto Serif SC",
+"Microsoft YaHei",
+serif;
+
+font-size: 27px;
+
+margin-bottom: 5px;
+
+
+}
+
+.word-pinyin {
+color: var(--red);
+
+font-size: 13px;
+
+margin-bottom: 4px;
+
+
+}
+
+.word-meaning {
+color: #777;
+
+font-size: 13px;
+
+
+}
+
+/* ================= EMPTY ================= */
+
+.empty {
+grid-column: 1 / -1;
+
+background: white;
+
+border: 1px dashed #ddd;
+
+border-radius: 12px;
+
+padding: 40px;
+
+text-align: center;
+
+color: #999;
+
+
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+border-top: 1px solid #e8e8e8;
+
+background: white;
+
+padding: 30px;
+
+text-align: center;
+
+color: #aaa;
+
+font-size: 12px;
+
+
+}
+
+.footer-chinese {
+color: var(--red);
+
+font-size: 20px;
+
+margin-bottom: 5px;
+
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+.header {
+    padding: 0 5%;
+}
+
+
+.logo-text {
+    display: none;
+}
+
+
+.container {
+    width: 92%;
+
+    margin-top: 25px;
+}
+
+
+.level-nav {
+    margin-bottom: 30px;
+}
+
+
+.level-button {
+    padding: 10px 4px;
+
+    font-size: 12px;
+}
+
+
+.page-title {
+    align-items: flex-end;
+}
+
+
+h1 {
+    font-size: 25px;
+}
+
+
+.page-title p {
+    display: none;
+}
+
+
+.progress-number strong {
+    font-size: 19px;
+}
+
+
+.flashcard {
+    height: 350px;
+}
+
+
+.card-face {
+    padding: 20px;
+}
+
+
+.controls {
+    gap: 8px;
+}
+
+
+.control-button {
+    padding: 14px 8px;
+
+    font-size: 13px;
+}
+
+
+.keyboard-hint {
+    display: none;
+}
+
+
+.word-grid {
+    grid-template-columns:
+        repeat(2, 1fr);
+}
+
+
+.word-item {
+    padding: 14px;
+}
+
+
+.word-hanzi {
+    font-size: 23px;
+}
+
+
+}
